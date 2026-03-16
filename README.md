@@ -1,8 +1,8 @@
 # Projet-2048
-a group project in python about the game 2048
+un project de groupe en python sur le jeu 2048
 
 Groupe TD1, Biologie informatique
-etudiant du groupe de projet:
+etudiant du groupe de projet:Raphael marot, Adam, ...
 
 
 Principe du jeu 2048
