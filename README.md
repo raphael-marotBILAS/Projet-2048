@@ -12,4 +12,3 @@ Règles du jeu
 
 Pour jouer à 2048, vous devez utiliser les flèches du clavier pour obtenir la fusion de deux tuiles ayant le même nombre. Par exemple, lorsque deux tuiles ayant le chiffre 2 se touchent, la tuile avec le chiffre 4 apparaît. L'objectif est donc de parvenir à la tuile de 2048 en prenant garde à vos mouvements. L'aire de jeu est limitée et une nouvelle tuile de chiffre 2 ou 4  apparaît à chaque déplacement.
 
-"Les informations sur le project seront donner ultérieurement lorsque le responsable Github aura régler ses problemes lier a son ordinateur"
