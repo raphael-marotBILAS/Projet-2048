@@ -1,1 +1,151 @@
-file:///C:/Users/raphaelmarot/Downloads/Nouveau%20dossier/2028.py
+#cd ~/project
+#touch 2048_game.py
+
+import random
+import tkinter as tk
+class Game2048:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("2048 Game")
+        self.root.geometry("400x400")
+
+        ## Initiation du score
+        self.grid = [[0 for _ in range(4)] for _ in range(4)]
+        self.score = 0
+
+        ## Crééer une tuile vide
+        self.tiles = []
+
+        #dessine la grille
+    def draw_grid(self):
+        for i in range(4):
+            row = []
+            for j in range(4):
+                cell = tk.Label(self.root, text="", font=("Helvetica", 24), width=5, height=2, borderwidth=4, relief="ridge")
+                cell.grid(row=i, column=j, padx=5, pady=5)
+                row.append(cell)
+            self.tiles.append(row)
+    def spawn_tuile(self):
+        empty_cells = [(i, j) for i in range(4) for j in range(4) if self.grid[i][j] == 0]
+        if empty_cells:
+            i, j = random.choice(empty_cells)
+            self.grid[i][j] = 2 if random.random() < 0.9 else 4
+            self.update_tuile()
+    def update_tuile(self):
+        for i in range(4):
+            for j in range(4):
+                tile_value = self.grid[i][j]
+                self.tiles[i][j]["text"] = str(tile_value) if tile_value > 0 else ""
+                self.tiles[i][j]["background"] = self.get_tuile_color(tile_value)
+
+
+
+    def get_tuile_color(self, value):
+        #set toutes les couleurs pour chaque tuile
+        #les couleurs ont était récupérer du jeu principale
+        colors = {
+            0: "#CDC1B4",
+            2: "#EEE4DA",
+            4: "#EDE0C8",
+            8: "#F2B179",
+            16: "#F59563",
+            32: "#F67C5F",
+            64: "#F65E3B",
+            128: "#EDCF72",
+            256: "#EDCC61",
+            512: "#EDC850",
+            1024: "#EDC53F",
+            2048: "#EDC22E"
+        }
+        return colors.get(value, "#FF0000")
+
+
+    def key_pressed(self, event):
+        if self.game_over():
+            return
+#definit les touches pour le joueur
+        if event.keysym == "Up":
+            self.move("up")
+        elif event.keysym == "Down":
+            self.move("down")
+        elif event.keysym == "Left":
+            self.move("left")
+        elif event.keysym == "Right":
+            self.move("right")
+
+        self.spawn_tuile()
+        self.update_tuile()
+###############################################################
+#cette partie a etait faite a partir de chatgpt
+    def move(self, direction):
+        if direction == "up":
+            self.grid = list(map(list, zip(*self.grid)))
+            self.move_left()
+            self.grid = list(map(list, zip(*self.grid)))
+        elif direction == "down":
+            self.grid = list(map(list, zip(*self.grid)))
+            self.move_right()
+            self.grid = list(map(list, zip(*self.grid)))
+        elif direction == "left":
+            self.move_left()
+        elif direction == "right":
+            self.move_right()
+##################################################################
+
+
+    def move_left(self):
+        for i in range(4):
+            row = self.grid[i]
+            row = [value for value in row if value != 0]
+            while len(row) < 4:
+                row.append(0)
+
+            for j in range(3):
+                if row[j] == row[j + 1] and row[j] != 0:
+                    row[j] *= 2
+                    row[j + 1] = 0
+                    self.score += row[j]
+
+            row = [value for value in row if value != 0]
+            while len(row) < 4:
+                row.append(0)
+            self.grid[i] = row
+
+    def move_right(self):
+        for i in range(4):
+            row = self.grid[i]
+            row = [value for value in row if value != 0]
+            while len(row) < 4:
+                row.insert(0, 0)
+
+            for j in range(3, 0, -1):
+                if row[j] == row[j - 1] and row[j] != 0:
+                    row[j] *= 2
+                    row[j - 1] = 0
+                    self.score += row[j]
+
+            row = [value for value in row if value != 0]
+            while len(row) < 4:
+                row.insert(0, 0)
+            self.grid[i] = row
+
+    def game_over(self):
+        for i in range(4):
+            for j in range(4):
+                if self.grid[i][j] == 0:
+                    return False
+
+        for i in range(4):
+            for j in range(3):
+                if self.grid[i][j] == self.grid[i][j + 1]:
+                    return False
+
+        for j in range(4):
+            for i in range(3):
+                if self.grid[i][j] == self.grid[i + 1][j]:
+                    return False
+
+        return True
+    
+
+#   def sauvegarde(self):
