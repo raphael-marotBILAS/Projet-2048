@@ -2,7 +2,7 @@
 un project de groupe en python sur le jeu 2048
 
 Groupe TD1, Biologie informatique
-etudiant du groupe de projet:Raphael marot, Adam, ...
+etudiant du groupe de projet:Raphael marot, Adam, Luna, et bourgi
 
 
 Principe du jeu 2048
