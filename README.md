@@ -3,6 +3,8 @@ un project de groupe en python sur le jeu 2048
 
 Groupe TD1, Biologie informatique
 etudiant du groupe de projet:Raphael marot, Adam, Luna, et bourgi
+*hébergeur,correcteur de style :raphael
+*participe a la partie de sauvegarde,chargement et exit du jeu: Adam, Luna et Bourgi
 
 
 Principe du jeu 2048
