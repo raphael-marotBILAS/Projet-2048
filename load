@@ -1,0 +1,17 @@
+def load():
+    grille = []
+    
+    f = open("sauvegarde.txt", "r")
+    
+    for ligne in f:
+        valeurs = ligne.split()
+        nouvelle_ligne = []
+        
+        for v in valeurs:
+            nouvelle_ligne.append(int(v))
+        
+        grille.append(nouvelle_ligne)
+    
+    f.close()
+    print("Chargement fait")
+    return grille
