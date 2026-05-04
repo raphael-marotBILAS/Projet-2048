@@ -16,7 +16,7 @@ Pour jouer à 2048, vous devez utiliser les flèches du clavier pour obtenir la 
 les project: https://git.esiee.fr/pythonprojete3/2048/-/tree/master ,https://medium.com/@uva/building-2048-game-with-python-and-pygame-aafd2e3af053,ont étaient utiliser comme outils de comparaison.
 
 Travail
-1-Base graphique du jeu :raphael
+1-Base graphique du jeu +logique :raphael; Bourgi
 
 2-bouton left/right et up/dowm: raphael 
 
