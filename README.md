@@ -24,3 +24,5 @@ Travail
 4-bouton save :Adam
 
 5-bouton load:Luna
+
+6-correcteur de defaut: raphael
