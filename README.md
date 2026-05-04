@@ -21,8 +21,7 @@ Travail
 
 3-bouton quit+score: Bourgi
 
-4-bouton save :Adam
+4-bouton save :Adam+ raphael
 
-5-bouton load:Luna
+5-bouton load:Luna+ raphael
 
-6-correcteur de defaut: raphael
