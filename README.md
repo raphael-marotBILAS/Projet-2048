@@ -17,6 +17,6 @@ Pour jouer à 2048, vous devez utiliser les flèches du clavier pour obtenir la 
 Travail
 1-Base graphique du jeu :raphael
 2-bouton left/right et up/dowm: raphael 
-3-bouton quit+ menu:
-4-bouton save :
-5-bouton load:
+3-bouton quit+score: Bourgi
+4-bouton save :Adam
+5-bouton load:Luna
