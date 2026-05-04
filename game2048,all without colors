@@ -124,7 +124,13 @@ class Game2048:
             for j in range(GRID_SIZE):
                 value = self.grid[i][j]
                 self.cells[i][j].config(text=str(value) if value != 0 else "")
+                bg_color = COLORS.get(value, "#3c3a32")
+                text_color = "#776e65" if value < 8 else "#f9f6f2"
 
+                self.cells[i][j].config(
+                    text=str(value) if value != 0 else "",
+                    bg=bg_color,
+                    fg=text_color)
     def get_score(self):
         return sum(sum(row) for row in self.grid)
 
