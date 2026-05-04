@@ -4,7 +4,7 @@ import random
 TAILLE = 4
 TAILLE_CASE = 100
 PADDING = 10
-
+"--------------corps---------------"
 COULEURS = {
     0: "#cdc1b4",
     2: "#eee4da",
@@ -120,3 +120,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+"------------------corps--------------"
+
+
